@@ -12,7 +12,7 @@ wu_current <- function(){
   suppressMessages(library(jsonlite))
 
   # https://www.wunderground.com/weather/api/d/docs
-  #wu_api <- 71dfcded4bf545e8
+
   #wu_url <- 'http://api.wunderground.com/api/71dfcded4bf545e8/conditions/q/MN/Minneapolis.json'
 
   wu_api <- Sys.getenv('WU_API')
