@@ -31,9 +31,5 @@ wu_4day <- function(city='Minneapolis', state='MN'){
 
   }
 
-# df_forecast %>%
-#   select(title, fcttext)
-
-
 
 # http://stackabuse.com/using-machine-learning-to-predict-the-weather-part-1/

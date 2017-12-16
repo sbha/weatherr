@@ -7,11 +7,12 @@
 #' @examples
 #' wu_current()
 
+# https://www.wunderground.com/weather/api/d/docs
+
 wu_current <- function(city='Minneapolis', state='MN'){
   suppressMessages(library(RCurl))
   suppressMessages(library(jsonlite))
-  # https://www.wunderground.com/weather/api/d/docs
-  #wu_url <- 'http://api.wunderground.com/api/71dfcded4bf545e8/conditions/q/MN/Minneapolis.json'
+
   wu_api <- Sys.getenv('WU_API')
   #wu_url_current <- paste0('http://api.wunderground.com/api/', wu_api, '/conditions/q/MN/Minneapolis.json')
   wu_url_current <- paste0('http://api.wunderground.com/api/', wu_api, '/conditions/q/',state,'/',city,'.json')

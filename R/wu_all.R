@@ -7,10 +7,9 @@
 #' @examples
 #' wu_all()
 
-# combine output from other functions
+# combine output from other WU functions
 
 wu_all <- function(city='Minneapolis', state='MN'){
-  #print(paste('Current and 4 day forecast for:', city, state, Sys.time()))
   wu_current(city, state)
   wu_4day(city, state)
   }
