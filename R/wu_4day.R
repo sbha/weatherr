@@ -9,12 +9,13 @@
 
 # https://www.wunderground.com/weather/api/d/docs
 
-wu_4day <- function(){
+wu_4day <- function(city='Minneapolis', state='MN'){
   suppressMessages(library(RCurl))
   suppressMessages(library(jsonlite))
 
   wu_api <- Sys.getenv('WU_API')
-  wu_url_forecast <- paste0('http://api.wunderground.com/api/', Sys.getenv('WU_API'), '/forecast/q/MN/Minneapolis.json')
+  #wu_url_forecast <- paste0('http://api.wunderground.com/api/', Sys.getenv('WU_API'), '/forecast/q/MN/Minneapolis.json')
+  wu_url_forecast <- paste0('http://api.wunderground.com/api/', wu_api, '/forecast/q/',state,'/',city,'.json')
   resp_forecast <- getURL(wu_url_forecast)
   df_forecast <- fromJSON(resp_forecast)$forecast$txt_forecast$forecastday
   df_forecast <- df_forecast[c('title', 'fcttext')]
@@ -25,7 +26,7 @@ wu_4day <- function(){
 
   #return(df_forecast)
   names(df_forecast) <- NULL
-  print('Four day forecast in:')
+  print(paste('Four day forecast for:', city, state))
   print(df_forecast, row.names = FALSE)
 
   }
