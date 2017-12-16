@@ -18,7 +18,7 @@ wu_current <- function(city='Minneapolis', state='MN'){
   resp_current <- getURL(wu_url_current)
 
   # \r\n
-  print(paste('Current forecast for:', city, state))
+  print(paste('Current conditions for:', city, state, Sys.time()))
   cat(paste(
     'current temp:\t\t', fromJSON(resp_current)$current_observation$temp_f,
     '\r\nfeels like:\t\t', fromJSON(resp_current)$current_observation$feelslike_f,
