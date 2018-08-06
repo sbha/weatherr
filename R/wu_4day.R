@@ -33,3 +33,4 @@ wu_4day <- function(city='Minneapolis', state='MN'){
 
 
 # http://stackabuse.com/using-machine-learning-to-predict-the-weather-part-1/
+
